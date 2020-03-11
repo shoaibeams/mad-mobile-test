@@ -1,26 +1,23 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {useState, useEffect} from 'react'
+import {useEffect} from 'react'
 import { fetchUsers } from '../../redux/user/user.actions';
 
+function Users({fetchUsers, users}) {
 
-function Users(props) {
-  
-       const [state, setstate] = useState([]);
-       
-       useEffect(() => {
-        async function getUsers() {
-          const users = await props.fetchUsers();
-          console.log("user", users)
-        }
-        getUsers();
-      }, []);
+       useEffect(()=>{
+         console.log("Calling", users)   
+         fetchUsers();
+      }, [users ? users.length: null])
+
 
     return (
         <div className="App">
         <header className="App-header">
             <p>
-                Users Screen
+                {users ? users.map(user=>
+                  <p>{user.phone}</p>
+                ):null}
             </p>
             
         </header>
@@ -28,5 +25,8 @@ function Users(props) {
     );
 }
 
+const mapStateToProps = state => ({
+  users: state.users.data
+});
 
-export default connect(null, {fetchUsers})(Users);
+export default connect(mapStateToProps, {fetchUsers})(Users);

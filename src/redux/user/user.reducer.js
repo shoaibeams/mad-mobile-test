@@ -5,8 +5,7 @@ const INITIAL_STATE = {
 }
 
 export const userReducer = (state = INITIAL_STATE, action) => {
-  console.log("state", state)
-  console.log("action", action)
+  console.log("action", action.payload)
   const s = action.payload
   console.log("test", s)
 
@@ -14,7 +13,7 @@ export const userReducer = (state = INITIAL_STATE, action) => {
     case UserActionTypes.GET_RANDOM_USERS:
       return {
         ...state,
-        user: action.payload
+        data: action.payload
       }
     default:
       return state

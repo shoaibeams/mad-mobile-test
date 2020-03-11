@@ -4,14 +4,12 @@ import rootReducer from './root-reducer'
 import thunk from 'redux-thunk'
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-const middlewares = []
+const middlewares = [thunk]
 
-if (process.env.NODE_ENV === 'development') {
-  // middlewares.push(logger)
-  middlewares.push(thunk)
-}
+const initialState = {};
 
 export const store = createStore(
   rootReducer,
+  initialState,
   composeEnhancers(applyMiddleware(...middlewares))
 )
