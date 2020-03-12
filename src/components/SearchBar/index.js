@@ -6,7 +6,6 @@ const SearchBar = ({ filterUsers }) => {
 
   const handleSearch = event => {
     setSearchPhrase(event.target.value);
-    // console.log('search', event.target.value);
     filterUsers(event.target.value);
   };
 
@@ -14,7 +13,7 @@ const SearchBar = ({ filterUsers }) => {
     <div className="searchbar-input">
       <input
         type="text"
-        placeholder="Search users here..."
+        placeholder="Search users by their first name"
         onChange={event => {
           handleSearch(event);
         }}

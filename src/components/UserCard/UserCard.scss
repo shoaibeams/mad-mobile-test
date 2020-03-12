@@ -1,15 +1,15 @@
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
-  margin: auto;
+  margin: 30px auto;
   text-align: center;
-  font-family: arial;
+  // font-family: arial;
   position: relative;
   width: 100%;
 }
 
 .top {
-  background-color: blue;
+  background-color: #406dff;
   color: white;
   font-size: 12px;
   overflow: hidden;
@@ -47,7 +47,7 @@ img {
   border-radius: 50%;
   z-index: 20px;
   width: 50%;
-  top: 18%;
+  top: 14%;
   left: 25%;
   position: absolute;
 }

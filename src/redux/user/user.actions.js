@@ -9,3 +9,8 @@ export const fetchUsers = () => async dispatch => {
     payload: response.results
   });
 };
+
+export const updateUsers = updatedUsers => ({
+  type: UserActionTypes.UPDATE_USERS,
+  payload: updatedUsers
+});
