@@ -1,29 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FaUserEdit } from 'react-icons/fa';
 import './UserCard.scss';
+import UserCardEdit from '../UserCardEdit';
+import UserInfo from '../UserInfo';
 
 function UserCard(props) {
   const {
     name: { first, last },
+    login,
     phone,
+    email,
     location,
     picture: { large }
   } = props.user;
 
+  const [editButtonClicked, setEditButtonClicked] = useState(false);
+
   return (
     <div className="card">
       <div className="top">
-        <h1>
+        <div onClick={() => setEditButtonClicked(true)}>
+          <FaUserEdit />
+        </div>
+        <h2>
           {first}&nbsp;{last}
-        </h1>
+        </h2>
       </div>
       <img src={large} alt="John" />
-      <div className="info">
-        <p>{phone}</p>
-        <p className="title">CEO & Founder, Example</p>
-        <p>
-          {location.city}, {location.country}
-        </p>
-      </div>
+      <UserInfo
+        login={login}
+        phone={phone}
+        email={email}
+        location={location}
+        editButtonClicked={editButtonClicked}
+      />
     </div>
   );
 }

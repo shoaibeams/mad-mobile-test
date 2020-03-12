@@ -9,6 +9,7 @@ import SearchBar from '../SearchBar';
 const App = ({ fetchUsers, users, updateUsers, newUsers }) => {
   useEffect(() => {
     fetchUsers();
+    saveInLocalStorage(users);
   }, [users ? users.length : null]);
 
   const filterUsers = searchValue => {
@@ -19,10 +20,16 @@ const App = ({ fetchUsers, users, updateUsers, newUsers }) => {
     updateUsers(users);
   };
 
+  const saveInLocalStorage = users => {
+    if (users) {
+      localStorage.setItem('users', JSON.stringify(users));
+    }
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <p>Random Users Grid</p>
+        <h1>Random Users</h1>
         <SearchBar filterUsers={filterUsers} />
         <UsersGrid users={newUsers ? newUsers : users} />
       </header>
