@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FaUserEdit } from 'react-icons/fa';
 import './UserCard.scss';
-import UserCardEdit from '../UserCardEdit';
 import UserInfo from '../UserInfo';
 
 function UserCard(props) {

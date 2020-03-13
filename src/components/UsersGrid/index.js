@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FaSortAmountDown, FaSortAmountUp } from 'react-icons/fa';
 import UserCard from '../UserCard';
 import './UsersGrid.scss';
+import { sortDesc, sortAsc } from '../../utils/utils';
 
 const UsersGrid = ({ users }) => {
+  const [iconVisibilty, setIconVisibilty] = useState(true);
+
+  const sortHandler = () => {
+    setIconVisibilty(!iconVisibilty);
+    iconVisibilty ? sortDesc() : sortAsc();
+  };
+
   return (
-    <div className="">
+    <div className="grid sortIcon">
+      <FaSortAmountUp
+        onClick={sortHandler}
+        style={{ display: iconVisibilty ? 'initial' : 'none' }}
+        className="sortIcon"
+      />
+      <FaSortAmountDown
+        onClick={sortHandler}
+        style={{ display: iconVisibilty ? 'none' : 'initial' }}
+        className="sortIcon"
+      />
+
       <header className="grid-container App-header">
         {users
           ? users.map(user => {

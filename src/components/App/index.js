@@ -26,6 +26,12 @@ const App = ({ fetchUsers, users, updateUsers, newUsers }) => {
     }
   };
 
+  // const handleUserAdd = newUser => {
+  //   let newUsers = users.filter(user => user.login.id !== newUser.id);
+  //   newUsers.unshift(newUser);
+  //   // this.setState({ users: newUsers });
+  // };
+
   return (
     <div className="App">
       <header className="App-header">

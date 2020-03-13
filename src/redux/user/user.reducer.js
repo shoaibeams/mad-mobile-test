@@ -14,6 +14,11 @@ export const userReducer = (state = INITIAL_STATE, action) => {
         ...state,
         filteredUsers: action.payload
       };
+    case UserActionTypes.UPDATE_USER:
+      return {
+        ...state,
+        data: action.payload
+      };
     default:
       return state;
   }
