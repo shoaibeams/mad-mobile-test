@@ -1,9 +1,9 @@
 import { UserActionTypes } from './user.types';
 
-export const fetchUsers = () => async dispatch => {
+export const fetchUsers = (page = 1) => async dispatch => {
   if (!localStorage.users) {
     const response = await (
-      await fetch('https://randomuser.me/api/?results=10')
+      await fetch(`https://randomuser.me/api/?page=${page}&results=10&seed=abc`)
     ).json();
     dispatch({
       type: UserActionTypes.GET_RANDOM_USERS,

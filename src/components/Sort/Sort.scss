@@ -1,0 +1,12 @@
+.sort-container {
+  display: flex;
+  align-items: center;
+  transform: translateX(140%);
+
+  span {
+    margin-right: 10px;
+  }
+  svg {
+    transform: translateY(4px);
+  }
+}
