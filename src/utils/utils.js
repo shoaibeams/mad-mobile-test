@@ -1,8 +1,7 @@
 export const sortAsc = arr => {
   arr.sort((a, b) => {
-    debugger;
-    const nameA = a.name.first.toUpperCase(); // ignore upper and lowercase
-    const nameB = b.name.first.toUpperCase(); // ignore upper and lowercase
+    const nameA = a.name.first.toUpperCase();
+    const nameB = b.name.first.toUpperCase();
 
     if (nameA < nameB) {
       return -1;
@@ -16,9 +15,8 @@ export const sortAsc = arr => {
 
 export const sortDesc = arr => {
   arr.sort((a, b) => {
-    debugger;
-    const nameA = a.name.first.toUpperCase(); // ignore upper and lowercase
-    const nameB = b.name.first.toUpperCase(); // ignore upper and lowercase
+    const nameA = a.name.first.toUpperCase();
+    const nameB = b.name.first.toUpperCase();
 
     if (nameA > nameB) {
       return -1;

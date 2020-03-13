@@ -3,11 +3,6 @@
   svg {
     color: black;
   }
-
-  & .sortIcon {
-    position: absolute;
-    right: 30px;
-  }
 }
 
 .grid-container {
@@ -15,4 +10,5 @@
   grid-column-gap: 50px;
   grid-template-columns: auto auto auto;
   padding: 10px;
+  position: relative;
 }

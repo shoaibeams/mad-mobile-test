@@ -15,8 +15,18 @@ const App = ({ fetchUsers, users, updateUsers, newUsers }) => {
 
   const filterUsers = searchValue => {
     users =
-      users.filter(user =>
-        user.name.first.toLowerCase().includes(searchValue.toLowerCase())
+      users.filter(
+        user =>
+          user.name.first.toLowerCase().includes(searchValue.toLowerCase()) ||
+          user.name.last.toLowerCase().includes(searchValue.toLowerCase()) ||
+          user.phone.toLowerCase().includes(searchValue.toLowerCase()) ||
+          user.email.toLowerCase().includes(searchValue.toLowerCase()) ||
+          user.location.city
+            .toLowerCase()
+            .includes(searchValue.toLowerCase()) ||
+          user.location.country
+            .toLowerCase()
+            .includes(searchValue.toLowerCase())
       ) || [];
     updateUsers(users);
   };
@@ -27,6 +37,11 @@ const App = ({ fetchUsers, users, updateUsers, newUsers }) => {
         <h1>Random Users</h1>
         <SearchBar filterUsers={filterUsers} />
         <UsersGrid users={newUsers ? newUsers : users} />
+        {fetchUsers && users ? (
+          fetchUsers.length === 0 && users.length === 0 ? (
+            <h1 className="no-users">No users found.</h1>
+          ) : null
+        ) : null}
       </header>
     </div>
   );

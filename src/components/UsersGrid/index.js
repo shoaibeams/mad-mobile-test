@@ -8,21 +8,21 @@ const UsersGrid = ({ users }) => {
   const [iconVisibilty, setIconVisibilty] = useState(true);
 
   const sortHandler = () => {
+    debugger;
     setIconVisibilty(!iconVisibilty);
     iconVisibilty ? sortDesc(users) : sortAsc(users);
   };
 
   return (
-    <div className="grid sortIcon">
+    <div className="grid">
       <FaSortAmountUp
         onClick={sortHandler}
         style={{ display: iconVisibilty ? 'initial' : 'none' }}
-        className="sortIcon"
       />
+
       <FaSortAmountDown
         onClick={sortHandler}
         style={{ display: iconVisibilty ? 'none' : 'initial' }}
-        className="sortIcon"
       />
 
       <header className="grid-container App-header">

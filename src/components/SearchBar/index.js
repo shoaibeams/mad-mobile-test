@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import './SearchBar.scss';
 
 const SearchBar = ({ filterUsers }) => {
-  const [searchPhrase, setSearchPhrase] = useState('');
-
   const handleSearch = event => {
-    setSearchPhrase(event.target.value);
     filterUsers(event.target.value);
   };
 
