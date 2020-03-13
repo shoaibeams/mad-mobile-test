@@ -23,17 +23,3 @@ export const updateUsers = updatedUsers => ({
   type: UserActionTypes.UPDATE_USERS,
   payload: updatedUsers
 });
-
-export const updateUser = async dispatch => {
-  const users = fetchUsers();
-  console.log('users', users);
-
-  // let newUsers = users.filter(user => user.login.id !== newUser.id);
-  // newUsers.unshift(newUser);
-  // this.setState({ users: newUsers });
-
-  return {
-    type: UserActionTypes.UPDATE_USER,
-    payload: ''
-  };
-};

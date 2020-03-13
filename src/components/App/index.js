@@ -5,6 +5,7 @@ import { fetchUsers, updateUsers } from '../../redux/user/user.actions';
 import './App.css';
 import UsersGrid from '../UsersGrid';
 import SearchBar from '../SearchBar';
+import { saveInLocalStorage } from '../../utils/utils';
 
 const App = ({ fetchUsers, users, updateUsers, newUsers }) => {
   useEffect(() => {
@@ -19,18 +20,6 @@ const App = ({ fetchUsers, users, updateUsers, newUsers }) => {
       ) || [];
     updateUsers(users);
   };
-
-  const saveInLocalStorage = users => {
-    if (users) {
-      localStorage.setItem('users', JSON.stringify(users));
-    }
-  };
-
-  // const handleUserAdd = newUser => {
-  //   let newUsers = users.filter(user => user.login.id !== newUser.id);
-  //   newUsers.unshift(newUser);
-  //   // this.setState({ users: newUsers });
-  // };
 
   return (
     <div className="App">

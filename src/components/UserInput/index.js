@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { updateUser } from '../../redux/user/user.actions';
 import './UserInput.scss';
+import { saveInLocalStorage } from '../../utils/utils';
 
 function UserInput({ value, name, login, editButtonClicked, users }) {
   const [inputs, setInputs] = useState({});
@@ -27,14 +27,7 @@ function UserInput({ value, name, login, editButtonClicked, users }) {
       users.unshift(selectedUser);
     }
 
-    debugger;
     saveInLocalStorage(users);
-  };
-
-  const saveInLocalStorage = users => {
-    if (users) {
-      localStorage.setItem('users', JSON.stringify(users));
-    }
   };
 
   return (
@@ -53,4 +46,4 @@ const mapStateToProps = state => ({
   users: state.users.data
 });
 
-export default connect(mapStateToProps, { updateUser })(UserInput);
+export default connect(mapStateToProps, {})(UserInput);

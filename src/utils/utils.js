@@ -29,3 +29,9 @@ export const sortDesc = arr => {
     return 0;
   });
 };
+
+export const saveInLocalStorage = users => {
+  if (users) {
+    localStorage.setItem('users', JSON.stringify(users));
+  }
+};
