@@ -9,7 +9,7 @@ const UsersGrid = ({ users }) => {
 
   const sortHandler = () => {
     setIconVisibilty(!iconVisibilty);
-    iconVisibilty ? sortDesc() : sortAsc();
+    iconVisibilty ? sortDesc(users) : sortAsc(users);
   };
 
   return (
