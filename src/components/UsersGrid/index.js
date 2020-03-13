@@ -15,6 +15,7 @@ const UsersGrid = ({ users }) => {
 
   return (
     <div className="grid">
+      <span className="sort-icon-text">Sort by name</span>
       <FaSortAmountUp
         onClick={sortHandler}
         style={{ display: iconVisibilty ? 'initial' : 'none' }}

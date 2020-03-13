@@ -10,7 +10,7 @@ const SearchBar = ({ filterUsers }) => {
     <div className="searchbar-input">
       <input
         type="text"
-        placeholder="Search users by their first name"
+        placeholder="Search users by name, email, or phone number"
         onChange={event => {
           handleSearch(event);
         }}
