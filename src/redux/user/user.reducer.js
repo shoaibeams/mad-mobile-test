@@ -14,7 +14,7 @@ export const userReducer = (state = INITIAL_STATE, action) => {
         ...state,
         filteredUsers: action.payload
       };
-    case UserActionTypes.UPDATE_USER:
+    case UserActionTypes.GET_MORE_USERS:
       return {
         ...state,
         data: action.payload
